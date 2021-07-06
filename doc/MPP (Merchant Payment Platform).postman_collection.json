@@ -1,0 +1,1161 @@
+{
+	"info": {
+		"_postman_id": "734073e7-868a-4460-8dce-3947e620ddae",
+		"name": "MPP (Merchant Payment Platform)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "uat-mpp",
+			"item": [
+				{
+					"name": "onboard",
+					"item": [
+						{
+							"name": "merchant",
+							"item": [
+								{
+									"name": "v1/mpp/onboard/merchant/individual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"merchantType\": \"INDIVIDUAL\",\r\n  \"firstName\": \"สมชาย\",\r\n  \"lastName\": \"กสิกร\",\r\n  \"identityID\": \"4570712099326\",\r\n  \"laserID\": \"AB0123456789\",\r\n  \"birthdate\": \"19901211\",\r\n  \"nationality\": \"TH\",\r\n  \"occuCd\": \"01\",\r\n  \"profCd\": \"01\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/individual",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"individual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/individual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"email\": \"abc@kbtg.tech\",\r\n  \"address\": {\r\n    \"workPlaceName\": \"บมจ.กสิกรไทย\",\r\n    \"boxNo\": \"88\",\r\n    \"no\": \"91/19\",\r\n    \"moo\": \"1\",\r\n    \"mooBan\": \"ราชาวดี\",\r\n    \"buildName\": \"ว่องไววิทย์\",\r\n    \"room\": \"5\",\r\n    \"floor\": \"20\",\r\n    \"soi\": \"เพชรเกษม 15\",\r\n    \"road\": \"เพชรเกษม\",\r\n    \"tumbol\": \"วัดท่าพระ\",\r\n    \"amppur\": \"บางกอกใหญ่\",\r\n    \"province\": \"กรุงเทพฯ\",\r\n    \"zipcode\": \"10600\",\r\n    \"language\": \"TH\"\r\n  },\r\n  \"occuCd\": \"01\",\r\n  \"profCd\": \"01\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/individual",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"individual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/juristic",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"merchantType\": \"JURISTIC\",\r\n  \"juristicName\": \"กสิกร\",\r\n  \"taxID\": \"101111111111\",\r\n  \"nationality\": \"TH\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/juristic",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"juristic"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/juristic",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"juristicName\": \"กสิกร\",\r\n  \"taxID\": \"101111111111\",\r\n  \"contactPerson\": {\r\n    \"firstName\": \"สมชาย\",\r\n    \"lastName\": \"กสิกร\",\r\n    \"email\": \"abc@kbtg.tech\",\r\n    \"address\": {\r\n      \"workPlaceName\": \"บมจ.กสิกรไทย\",\r\n      \"boxNo\": \"88\",\r\n      \"no\": \"91/19\",\r\n      \"moo\": \"1\",\r\n      \"mooBan\": \"ราชาวดี\",\r\n      \"buildName\": \"ว่องไววิทย์\",\r\n      \"room\": \"5\",\r\n      \"floor\": \"20\",\r\n      \"soi\": \"เพชรเกษม 15\",\r\n      \"road\": \"เพชรเกษม\",\r\n      \"tumbol\": \"วัดท่าพระ\",\r\n      \"amppur\": \"บางกอกใหญ่\",\r\n      \"province\": \"กรุงเทพฯ\",\r\n      \"zipcode\": \"10600\",\r\n      \"language\": \"TH\"\r\n    }\r\n  },\r\n  \"address\": {\r\n    \"workPlaceName\": \"บมจ.กสิกรไทย\",\r\n    \"boxNo\": \"88\",\r\n    \"no\": \"91/19\",\r\n    \"moo\": \"1\",\r\n    \"mooBan\": \"ราชาวดี\",\r\n    \"buildName\": \"ว่องไววิทย์\",\r\n    \"room\": \"5\",\r\n    \"floor\": \"20\",\r\n    \"soi\": \"เพชรเกษม 15\",\r\n    \"road\": \"เพชรเกษม\",\r\n    \"tumbol\": \"วัดท่าพระ\",\r\n    \"amppur\": \"บางกอกใหญ่\",\r\n    \"province\": \"กรุงเทพฯ\",\r\n    \"zipcode\": \"10600\",\r\n    \"language\": \"TH\"\r\n  },\r\n  \"birthdate\": \"19901211\",\r\n  \"email\": \"abc@kbtg.tech\",\r\n  \"mobile\": \"66812345678\",\r\n  \"branchType\": \"Branch\",\r\n  \"branch\": \"Nonthaburi\",\r\n  \"businessCode\": \"001010209\",\r\n  \"customerCategory\": \"0608\",\r\n  \"relatedEntities\": {\r\n    \"relatedCode\": \"B19 (ผู้บริหารสูงสุดของนิติบุคคล)\",\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"identityID\": \"string\",\r\n    \"nationality\": \"string\",\r\n    \"birthdate\": \"string\",\r\n    \"occuCd\": \"string\",\r\n    \"profCd\": \"string\",\r\n    \"sourceOfFund\": \"string\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/juristic",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"juristic"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/document",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "partnerMerchantID",
+													"value": "123456789",
+													"type": "text"
+												},
+												{
+													"key": "document",
+													"type": "file",
+													"src": "/D:/Users/tanapon.s/Downloads/Untitled.png"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/document",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"document"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/otp/get",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"mobile\": \"66812345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/otp/get",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"otp",
+												"get"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/otp/verify",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"mobile\": \"66812345678\",\r\n  \"refCode\": \"ABCD\",\r\n  \"otp\": \"ABCDEF\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/otp/verify",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"otp",
+												"verify"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/merchant/inquiry",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/merchant/v1/inquiry",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"merchant",
+												"v1",
+												"inquiry"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "shop",
+							"item": [
+								{
+									"name": "v1/mpp/onboard/shop/inquiry",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerShopID\": \"123456789\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/inquiry",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"inquiry"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/shop/individual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"partnerShopID\": \"123456789\",\r\n  \"shopName\": \"Shop-test\",\r\n  \"merchantCategoryCode\": \"5691\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/individual",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"individual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/shop/individual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerShopID\": \"123456789\",\r\n  \"shopName\": \"Shop-test\",\r\n  \"payout\": {\r\n    \"bankID\": \"004\",\r\n    \"accountNo\": \"0123456789\",\r\n    \"type\": \"account\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/individual",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"individual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/shop/juristic",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"partnerMerchantID\": \"123456789\",\r\n  \"partnerShopID\": \"123456789\",\r\n  \"shopName\": \"Shop-test\",\r\n  \"merchantCategoryCode\": \"5691\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/juristic",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"juristic"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/shop/kym",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "partnerShopID",
+													"value": "123456789",
+													"type": "text"
+												},
+												{
+													"key": "document",
+													"type": "file",
+													"src": "/D:/Users/tanapon.s/Downloads/Untitled.png"
+												},
+												{
+													"key": "description",
+													"value": "Shop image",
+													"type": "text"
+												},
+												{
+													"key": "lastUpdate",
+													"value": "Y",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/kym",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"kym"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "v1/mpp/onboard/shop/document",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "ProjectID",
+												"value": "RequestID",
+												"type": "text"
+											},
+											{
+												"key": "ProjectKey",
+												"value": "PROJECTKEYIS0001",
+												"type": "text"
+											},
+											{
+												"key": "PartnerID",
+												"value": "0001",
+												"type": "text"
+											},
+											{
+												"key": "RequestID",
+												"value": "REQUESTID!3213213",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "partnerShopID",
+													"value": "123456789",
+													"type": "text"
+												},
+												{
+													"key": "bookbankDocument",
+													"type": "file",
+													"src": "/D:/Users/tanapon.s/Downloads/Untitled.png"
+												},
+												{
+													"key": "nameChangeDocument",
+													"type": "file",
+													"src": "/D:/Users/tanapon.s/Downloads/Untitled.png"
+												},
+												{
+													"key": "payoutBankID",
+													"value": "004",
+													"type": "text"
+												},
+												{
+													"key": "payoutAccountNo",
+													"value": "0123456789",
+													"type": "text"
+												},
+												{
+													"key": "payoutType",
+													"value": "account",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/shop/v1/document",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"openapi-nonprod",
+												"kasikornbank",
+												"com"
+											],
+											"path": [
+												"v1",
+												"mpp",
+												"onboard",
+												"shop",
+												"v1",
+												"document"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "v1/mpp/onboard/getaddress",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "ProjectID",
+										"value": "RequestID",
+										"type": "text"
+									},
+									{
+										"key": "ProjectKey",
+										"value": "PROJECTKEYIS0001",
+										"type": "text"
+									},
+									{
+										"key": "PartnerID",
+										"value": "0001",
+										"type": "text"
+									},
+									{
+										"key": "RequestID",
+										"value": "REQUESTID!3213213",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tumbol\": \"string\",\r\n  \"amppur\": \"string\",\r\n  \"province\": \"string\",\r\n  \"zipcode\": \"10600\",\r\n  \"language\": \"TH\",\r\n  \"index\": 0,\r\n  \"size\": 99999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://uat.openapi-nonprod.kasikornbank.com/v1/mpp/onboard/getaddress",
+									"protocol": "https",
+									"host": [
+										"uat",
+										"openapi-nonprod",
+										"kasikornbank",
+										"com"
+									],
+									"path": [
+										"v1",
+										"mpp",
+										"onboard",
+										"getaddress"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "/oauth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"accessToken\", jsonData.access_token);\r",
+									"pm.environment.get(\"variable_key\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "x-test-mode",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Host",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://uat.openapi-nonprod.kasikornbank.com/oauth/token",
+							"protocol": "https",
+							"host": [
+								"uat",
+								"openapi-nonprod",
+								"kasikornbank",
+								"com"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

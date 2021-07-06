@@ -4,7 +4,12 @@ class KbankHelperTest < Test::Unit::TestCase
   include OffsitePayments::Integrations
 
   def setup
-    @helper = Kbank::Helper.new('order-500','cody@example.com', :amount => 500, :currency => 'USD')
+    @helper = Kbank::Helper.new(
+      'order-500',
+      'cody@example.com',
+      amount: 500,
+      currency: 'USD'
+    )
   end
 
   def test_basic_helper_fields

@@ -1,5 +1,5 @@
-require 'offsite_payments/integrations/kbank/helper'
-require 'offsite_payments/integrations/kbank/notification'
+# require 'offsite_payments/integrations/kbank/helper'
+# require 'offsite_payments/integrations/kbank/notification'
 
 module OffsitePayments #:nodoc:
   module Integrations #:nodoc:

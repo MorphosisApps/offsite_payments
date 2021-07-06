@@ -1,0 +1,1631 @@
+openapi: 3.0.0
+info:
+  title: Merchant payment platform
+  description: >
+    ### API Version History
+
+    Version | Description | Date | By
+
+    ----------------|-------------|-------------|-------------------
+
+    1.0.0 | Initail Document - Merchant payment platform | 2020-08-10 | Tanapon
+    Suwankesawong
+  version: 1.0.0
+servers:
+  - url: 'https://uat.openapi-nonprod.kasikornbank.com/v1/mpp'
+tags: 
+  - name: Onboard
+security:
+  - oAuth2_client_credential: []
+paths:
+  /onboard/merchant/v1/document:
+    put:
+      tags:
+        - Onboard
+      summary: Upload Document
+      description: Upload Document
+      operationId: upload-merchant-document
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - document
+              - partnerMerchantID
+              properties:
+                partnerMerchantID:
+                  type: string
+                  description: Partner merchant ID
+                document:
+                  type: string
+                  description: File
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.UploadDocumentResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+  /onboard/merchant/v1/individual:
+    put:
+      tags:
+        - Onboard
+      summary: Update Merchant Individual
+      description: Update Merchant Individual
+      operationId: update-merchant-individual
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.UpdateIndividualRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.UpdateIndividualResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+    post:
+      tags:
+        - Onboard
+      summary: Create Merchant Individual
+      description: Create Merchant Individual
+      operationId: create-merchant-individual
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.CreateIndividualRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.CreateIndividualResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/merchant/v1/inquiry:
+    post:
+      tags:
+        - Onboard
+      summary: Inquiry Merchant
+      description: Inquiry Merchant
+      operationId: inquiry-merchant
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: InquiryMerchant_01
+      - name: ProjectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: ProjectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: InquiryMerchant Body Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.InquiryRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.InquiryResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/merchant/v1/juristic:
+    put:
+      tags:
+        - Onboard
+      summary: Update Merchant Juristic
+      description: Update Merchant Juristic
+      operationId: update-merchant-juristic
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.UpdateJuristicRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.UpdateJuristicResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+    post:
+      tags:
+        - Onboard
+      summary: Create Merchant Juristic
+      description: Create Merchant Juristic
+      operationId: create-merchant-juristic
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.CreateJuristicRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.CreateJuristicResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/merchant/v1/otp/get:
+    post:
+      tags:
+        - Onboard
+      summary: Get OTP
+      description: Get OTP
+      operationId: get-otp
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.GetOTPRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.GetOTPResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/merchant/v1/otp/verify:
+    post:
+      tags:
+        - Onboard
+      summary: Verify OTP
+      description: Verify OTP
+      operationId: verify-otp
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/merchant.VerifyOTPRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/merchant.VerifyOTPResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/shop/v1/document:
+    put:
+      tags:
+        - Onboard
+      summary: Upload Document
+      description: Upload Document
+      operationId: upload-shop-document
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - document
+              - partnerShopID
+              - payoutAccountNo
+              - payoutBankID
+              - payoutType
+              properties:
+                partnerShopID:
+                  type: string
+                  description: Partner shop ID
+                payoutType:
+                  type: string
+                  description: Description
+                payoutBankID:
+                  type: string
+                  description: Bank ID
+                payoutAccountNo:
+                  type: string
+                  description: Account No
+                document:
+                  type: string
+                  description: File
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.UploadDocumentResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+  /onboard/shop/v1/individual:
+    put:
+      tags:
+        - Onboard
+      summary: Update Shop Individual
+      description: Update Shop Individual
+      operationId: update-shop-individual
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shop.UpdateIndividualRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.UpdateIndividualResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+    post:
+      tags:
+        - Onboard
+      summary: Create Shop Individual
+      description: Create Shop Individual
+      operationId: create-shop-individual
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shop.CreateIndividualRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.CreateIndividualResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/shop/v1/inquiry:
+    post:
+      tags:
+        - Onboard
+      summary: Inquiry Shop
+      description: Inquiry Shop
+      operationId: inquiry-shop
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shop.InquiryRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.InquiryResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/shop/v1/juristic:
+    post:
+      tags:
+        - Onboard
+      summary: Create Shop Juristic
+      description: Create Shop Juristic
+      operationId: create-shop-juristic
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        description: Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shop.CreateJuristicRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.CreateJuristicResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+      x-codegen-request-body-name: request
+  /onboard/shop/v1/kym:
+    put:
+      tags:
+        - Onboard
+      summary: Upload KYM
+      description: Upload KYM
+      operationId: upload-shop-kym
+      parameters:
+      - name: RequestID
+        in: header
+        description: Request ID
+        required: true
+        schema:
+          type: string
+          default: "12345"
+      - name: projectID
+        in: header
+        description: Project ID
+        required: true
+        schema:
+          type: string
+          default: "001"
+      - name: projectKey
+        in: header
+        description: Project Key
+        required: true
+        schema:
+          type: string
+          default: A01
+      - name: PartnerID
+        in: header
+        description: Partner ID
+        required: true
+        schema:
+          type: string
+          default: "0001"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - description
+              - document
+              - lastUpdate
+              - partnerShopID
+              properties:
+                partnerShopID:
+                  type: string
+                  description: Partner shop ID
+                description:
+                  type: string
+                  description: Description
+                lastUpdate:
+                  type: string
+                  description: Indicidate if this is the last update before review
+                    KYM. If Y, this shop will be put in review KYM queue
+                document:
+                  type: string
+                  description: File
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shop.UploadKYMResponse'
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/kmodels.ErrorResp'
+components:
+  schemas:
+    kmodels.Address:
+      type: object
+      properties:
+        amppur:
+          type: string
+          description: len 30 ,example บางกอกใหญ่
+        boxNo:
+          type: string
+          description: len 20 ,example 88
+        buildName:
+          type: string
+          description: len 40 ,example ว่องไววิทย์
+        floor:
+          type: string
+          description: len 8  ,example 20
+        moo:
+          type: string
+          description: len 10 ,example 1
+        mooBan:
+          type: string
+          description: len 40 ,example ราชาวดี
+        "no":
+          type: string
+          description: len 15 ,example 91/19
+        province:
+          type: string
+          description: len 40 ,example กรุงเทพฯ
+        road:
+          type: string
+          description: len 40 ,example เพชรเกษม
+        room:
+          type: string
+          description: len 10 ,example 5
+        soi:
+          type: string
+          description: len 40 ,example เพชรเกษม 15
+        tumbol:
+          type: string
+          description: len 30 ,example วัดท่าพระ
+        workPlaceName:
+          type: string
+          description: len 100,example บมจ.กสิกรไทย
+        zipcode:
+          type: string
+          description: len 15 ,example 10600
+    kmodels.Capabilities:
+      type: object
+      properties:
+        charge:
+          $ref: '#/components/schemas/kmodels.Capability'
+        payout:
+          $ref: '#/components/schemas/kmodels.Capability'
+    kmodels.Capability:
+      type: object
+      properties:
+        limitAmountPerMonth:
+          $ref: '#/components/schemas/kmodels.Limit'
+        limitAmountPerTXN:
+          $ref: '#/components/schemas/kmodels.Limit'
+        status:
+          type: string
+    kmodels.ContactPerson:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/kmodels.Address'
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        mobile:
+          type: string
+    kmodels.ER:
+      type: object
+      properties:
+        details:
+          type: object
+          properties: {}
+        field:
+          type: string
+        message:
+          type: string
+        name:
+          type: string
+    kmodels.ErrorResp:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/kmodels.ER'
+        status:
+          type: string
+        timestamp:
+          type: string
+    kmodels.Limit:
+      type: object
+      properties:
+        currencyCode:
+          type: string
+        value:
+          type: string
+          description: Decimal amount
+          example: "100.23"
+    kmodels.Payout:
+      type: object
+      properties:
+        accountNameEN:
+          type: string
+        accountNameTH:
+          type: string
+        accountNo:
+          type: string
+        bankID:
+          type: string
+        type:
+          type: string
+    kmodels.RelatedEntity:
+      type: object
+      properties:
+        birthDate:
+          type: string
+        createdAt:
+          type: string
+        firstName:
+          type: string
+        identityID:
+          type: string
+        lastName:
+          type: string
+        nationality:
+          type: string
+        occuCd:
+          type: string
+        profCd:
+          type: string
+        reID:
+          type: string
+        relatedCode:
+          type: string
+        riskRating:
+          $ref: '#/components/schemas/kmodels.RiskRating'
+        sanctionFlag:
+          type: string
+        sourceOfFund:
+          type: string
+        updatedAt:
+          type: string
+    kmodels.RiskRating:
+      type: object
+      properties:
+        riskLevel:
+          type: integer
+        riskReason:
+          type: array
+          items:
+            $ref: '#/components/schemas/kmodels.RiskReason'
+    kmodels.RiskReason:
+      type: object
+      properties:
+        reasonCd:
+          type: string
+        reasonDesc:
+          type: string
+        reasonRemark:
+          type: string
+    kmodels.ShopList:
+      type: object
+      properties:
+        partnerShopID:
+          type: string
+    kmoney.Money:
+      type: object
+    merchant.CreateIndividualRequest:
+      type: object
+      properties:
+        birthDate:
+          type: string
+          example: "19960102"
+        firstName:
+          type: string
+          example: Kasi
+        identityID:
+          type: string
+          example: "3120207571566"
+        laserID:
+          type: string
+          example: AB1234567890
+        lastName:
+          type: string
+          example: Korn
+        merchantType:
+          type: string
+          example: INDIVIDUAL
+        nationality:
+          type: string
+          example: TH
+        occuCd:
+          type: string
+          example: "01"
+        partnerMerchantID:
+          type: string
+          example: "1"
+        profCd:
+          type: string
+          example: "01"
+    merchant.CreateIndividualResponse:
+      type: object
+      properties:
+        limitAmountPerMonth:
+          type: string
+        limitOfShop:
+          type: integer
+        merchantStatus:
+          type: string
+        merchantType:
+          type: string
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.CreateJuristicRequest:
+      type: object
+      properties:
+        juristicName:
+          type: string
+        merchantType:
+          type: string
+        nationality:
+          type: string
+        partnerMerchantID:
+          type: string
+        taxID:
+          type: string
+    merchant.CreateJuristicResponse:
+      type: object
+      properties:
+        limitAmountPerMonth:
+          type: string
+        limitOfShop:
+          type: integer
+        merchantStatus:
+          type: string
+        merchantType:
+          type: string
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.GetOTPRequest:
+      type: object
+      properties:
+        mobile:
+          type: string
+        partnerMerchantID:
+          type: string
+    merchant.GetOTPResponse:
+      type: object
+      properties:
+        mobile:
+          type: string
+        partnerMerchantID:
+          type: string
+        refCode:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.InquiryRequest:
+      type: object
+      properties:
+        partnerMerchantID:
+          type: string
+    merchant.InquiryResponse:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/kmodels.Address'
+        birthDate:
+          type: string
+        branch:
+          type: string
+        branchType:
+          type: string
+        businessCode:
+          type: string
+        contactPerson:
+          $ref: '#/components/schemas/kmodels.ContactPerson'
+        customerCategory:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+          description: individual
+        identityID:
+          type: string
+        juristicName:
+          type: string
+          description: juristic
+        laserID:
+          type: string
+        lastName:
+          type: string
+        limitAmountPerMonth:
+          type: string
+        limitOfShop:
+          type: integer
+        merchantStatus:
+          type: string
+        merchantType:
+          type: string
+        mobile:
+          type: string
+        nationality:
+          type: string
+        needDocument:
+          type: string
+        numberOfShop:
+          type: integer
+        occuCd:
+          type: string
+        partnerMerchantID:
+          type: string
+        profCd:
+          type: string
+        shopList:
+          type: array
+          description: common
+          items:
+            $ref: '#/components/schemas/kmodels.ShopList'
+        status:
+          type: string
+        taxID:
+          type: string
+        timestamp:
+          type: string
+    merchant.UpdateIndividualRequest:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/kmodels.Address'
+        email:
+          type: string
+        firstName:
+          type: string
+        laserID:
+          type: string
+        lastName:
+          type: string
+        occuCd:
+          type: string
+        partnerMerchantID:
+          type: string
+        profCd:
+          type: string
+    merchant.UpdateIndividualResponse:
+      type: object
+      properties:
+        merchantStatus:
+          type: string
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.UpdateJuristicRequest:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/kmodels.Address'
+        birthDate:
+          type: string
+        branch:
+          type: string
+        branchType:
+          type: string
+        businessCode:
+          type: string
+        contactPerson:
+          $ref: '#/components/schemas/kmodels.ContactPerson'
+        customerCategory:
+          type: string
+        email:
+          type: string
+        juristicName:
+          type: string
+        mobile:
+          type: string
+        partnerMerchantID:
+          type: string
+        relatedEntities:
+          type: array
+          items:
+            $ref: '#/components/schemas/kmodels.RelatedEntity'
+        taxID:
+          type: string
+    merchant.UpdateJuristicResponse:
+      type: object
+      properties:
+        merchantStatus:
+          type: string
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.UploadDocumentResponse:
+      type: object
+      properties:
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    merchant.VerifyOTPRequest:
+      type: object
+      properties:
+        mobile:
+          type: string
+        otp:
+          type: string
+        partnerMerchantID:
+          type: string
+        refCode:
+          type: string
+    merchant.VerifyOTPResponse:
+      type: object
+      properties:
+        merchantStatus:
+          type: string
+        mobile:
+          type: string
+        partnerMerchantID:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.CreateIndividualRequest:
+      type: object
+      properties:
+        merchantCategoryCode:
+          type: string
+        partnerMerchantID:
+          type: string
+        partnerShopID:
+          type: string
+        shopName:
+          type: string
+    shop.CreateIndividualResponse:
+      type: object
+      properties:
+        capabilities:
+          $ref: '#/components/schemas/kmodels.Capabilities'
+        needDocument:
+          type: string
+        needKYM:
+          type: string
+        partnerMerchantID:
+          type: string
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.CreateJuristicRequest:
+      type: object
+      properties:
+        merchantCategoryCode:
+          type: string
+        partnerMerchantID:
+          type: string
+        partnerShopID:
+          type: string
+        shopName:
+          type: string
+    shop.CreateJuristicResponse:
+      type: object
+      properties:
+        capabilities:
+          $ref: '#/components/schemas/kmodels.Capabilities'
+        partnerMerchantID:
+          type: string
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.InquiryRequest:
+      type: object
+      properties:
+        partnerShopID:
+          type: string
+    shop.InquiryResponse:
+      type: object
+      properties:
+        capabilities:
+          $ref: '#/components/schemas/kmodels.Capabilities'
+        needDocument:
+          type: string
+        needKYM:
+          type: string
+        partnerMerchantID:
+          type: string
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.UpdateIndividualRequest:
+      type: object
+      properties:
+        partnerShopID:
+          type: string
+        payout:
+          $ref: '#/components/schemas/kmodels.Payout'
+        shopName:
+          type: string
+    shop.UpdateIndividualResponse:
+      type: object
+      properties:
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.UploadDocumentResponse:
+      type: object
+      properties:
+        capabilities:
+          $ref: '#/components/schemas/kmodels.Capabilities'
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+    shop.UploadKYMResponse:
+      type: object
+      properties:
+        needKYM:
+          type: string
+        partnerShopID:
+          type: string
+        shopStatus:
+          type: string
+        status:
+          type: string
+        timestamp:
+          type: string
+  
+  securitySchemes:
+    oAuth2_client_credential:
+      type: oauth2
+      description: >-
+        <p style="word-break: break-word;">KBank Open API uses OAUTH2.0 client
+        credentials as an authorization method. 
+
+        When requesting a client credentials access token, you must authenticate
+        yourself as a client. In the response, 
+
+        an access token is retuned. This token is used to access any APIs that
+        KBank provided. For security reasons, 
+
+        the validity of the token is temporary.<br/></p>
+
+        <p style="padding-left: 30px;">&nbsp;</p>
+
+        <p style="word-break: break-word;"><strong>How to work with OAuth 2.0 to
+        get access token</strong></p>
+
+        <p style="word-break: break-word;">1. Client get credential as Consumer
+        ID and Consumer Secret from KBank.</p>
+
+        <dl>
+
+        <dd><small>Example:<br />Consumer ID =a2FzaWtvcm5iYW5rdXNlcg==<br
+        />Consumer Secret =a2FzaWtvcm5iYW5rcGFzc3dvcmQ=</small></dd>
+
+        </dl>
+
+        <p style="word-break: break-word;">2. Generate a Basic Authentication
+        format with your Consumer ID and Consumer Secret with the steps.</p>
+
+        <ul>
+
+        <li style="word-break: break-word;">Use data format&nbsp; &lt;Consumer
+        ID&gt;:&lt;Consumer Secret&gt;<br /> 
+
+        <dl>
+
+        <dd><small>Example:<br
+        />a2FzaWtvcm5iYW5rdXNlcg==</small>:<small>a2FzaWtvcm5iYW5rcGFzc3dvcmQ=</small></dd>
+
+        </dl>
+
+        </li>
+
+        <li style="word-break: break-word;">Encode data with Base64 encoder <br
+        />
+
+        <dl>
+
+        <dd><small>Example:<br
+        />YTJGemFXdHZjbTVpWVc1cmRYTmxjZz09OmEyRnphV3R2Y201aVlXNXJjR0Z6YzNkdmNtUT0=</small></dd>
+
+        </dl>
+
+        </li>
+
+        <li style="word-break: break-word;">Use encoded data to fill in the
+        header with the format.
+
+        <dl>
+
+        <dd>Authorization : Basic &lt;Encode data with
+        Base64&gt;<br/><br/><small>Example data:<br />Authorization : Basic
+        YTJGemFXdHZjbTVpWVc1cmRYTmxjZz09OmEyRnphV3R2Y201aVlXNXJjR0Z6YzNkdmNtUT0=</small></dd>
+
+        </dl>
+
+        </li>
+
+        </ul>
+
+        <p style="word-break: break-word;">3. Specify&nbsp; "Content-Type:
+        application/x-www-form-urlencoded" in header.</p>
+
+        <p style="word-break: break-word;">4. Specify
+        "grant_type=client_credentials" in body.</p>
+
+        <p style="word-break: break-word;">5. Call POST message to KBank
+        Authentication server.</p>
+
+        <p style="word-break: break-word;">6. Get your access token. It is used
+        for calling any APIs. The token is valid for 30 mins before expire.</p>
+
+        <p style="padding-left: 30px;">&nbsp;</p>
+
+        <p style="word-break: break-word;"><strong>Example request message to
+        get access token in curl command format</strong></p>
+
+        <p style="padding-left: 20px;"><small><em>curl --location --request POST
+        'https://example.kasikornbank.com/oauth/token' \</em><br /><em> --header
+        'Content-Type: application/x-www-form-urlencoded' \</em><br /><em>
+        --header 'Authorization: Basic
+        YTJGemFXdHZjbTVpWVc1cmRYTmxjZz09OmEyRnphV3R2Y201aVlXNXJjR0Z6YzNkdmNtUT0='
+        \</em><br /><em> --data-urlencode
+        'grant_type=client_credentials'</em></small></p>
+
+        <p style="padding-left: 30px;">&nbsp;</p>
+
+        <p style="word-break: break-word;"><strong>Using access token to access
+        an API</strong></p>
+
+        <p style="word-break: break-word;">Access token to be passed as a bearer
+        token in Authorization header for every APIs call.</p>
+
+        <dl>
+
+        <dd>Authorization : Bearer &lt;Access
+        token&gt;<br/><br/><small>Example:<br />Authorization : Bearer
+        a2FzaWtvcm5iYW5rdG9rZW4=</small></dd>
+
+        </dl>
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://uat.openapi-nonprod.kasikornbank.com/oauth/token'
